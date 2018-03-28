@@ -1,17 +1,13 @@
-module.exports = function(loader, nameMap) {
-    var BuiltinModule = loader('module');
+var BuiltinModule = require('module');
 
-    // Guard against poorly mocked module constructors
-    var Module = module.constructor.length > 1 ? module.constructor : BuiltinModule;
+// Guard against poorly mocked module constructors
+var Module = module.constructor.length > 1 ? module.constructor : BuiltinModule;
 
-    const oldResolveFilename = Module._resolveFilename;
-    const oldNodeModulePaths = Module._nodeModulePaths;
+const oldResolveFilename = Module._resolveFilename;
+const oldNodeModulePaths = Module._nodeModulePaths;
 
+module.exports = function(nameMap) {
     Module._resolveFilename = function(request, parent, isMain) {
-        if (request.indexOf('anotherRoot') > -1) {
-            console.log('aliasing ' + request);
-        }
-
         let newRequest = request;
         Object.keys(nameMap).forEach(regex => {
             const mappedModuleName = nameMap[regex];
