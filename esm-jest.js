@@ -29,7 +29,8 @@ const api = [
   "describe",
   "expect",
   "it",
-  "test"
+  "test",
+  "spyOn"
 ];
 
 const oldRequireModule = jestRuntime.prototype.requireModule;
