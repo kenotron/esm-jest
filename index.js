@@ -1,3 +1,10 @@
-import bar from 'anotherRoot/bar';
+//import * as bar from 'anotherRoot/bar';
+const bar = require('anotherRoot/bar');
 
-export function addBar(y) { return bar + y; }
+function addBar(y) { 
+    // ESM:
+    return bar.default() + y; 
+}
+
+//export default addBar;
+module.exports.default = addBar;
