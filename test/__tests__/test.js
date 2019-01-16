@@ -1,4 +1,4 @@
-import { addBar } from '../../index';
+import addBar from '../../index';
 import * as bar from 'anotherRoot/bar';
 
 test('addBar should be add five', () => {
