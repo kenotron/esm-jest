@@ -1,13 +1,10 @@
-/*import React from 'react';
-import addBar from './index';*/
-
-const React = require('react');
-const addBar = require('./index').default;
+import React from 'react';
+import addBar from './index';
 
 class SomeComponent extends React.Component {
-    render() {
-        return React.createElement('div', null, addBar(this.props.value));
-    }
+  render() {
+    return React.createElement('div', null, addBar(this.props.value));
+  }
 }
 
 module.exports.default = SomeComponent;
