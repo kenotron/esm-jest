@@ -1,7 +1,7 @@
 {
   "name": "esm-jest",
   "scripts": {
-    "test": "node -r esm node_modules/jest/bin/jest.js --runInBand --no-cache --config jest.config.js"
+    "test": "npx jest --runInBand --no-cache --config jest.config.js"
   },
   "dependencies": {
     "esm": "3.1.0",

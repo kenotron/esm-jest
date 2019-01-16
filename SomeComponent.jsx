@@ -7,5 +7,4 @@ class SomeComponent extends React.Component {
   }
 }
 
-module.exports.default = SomeComponent;
-// export default SomeComponent;
+export default SomeComponent;
